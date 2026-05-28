@@ -140,12 +140,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Esa Kenzie Galaksi Putra — Frontend Web Developer</title>
+        <title>Esa Kenzie Galaksi Putra — Network Engineer & Video Editor</title>
         <meta name="description" content="Website portofolio Esa Kenzie Galaksi Putra, siswa XI TKJ 2." />
      <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ekizr.com" />
-        <meta property="og:title" content="Eki Zulfar Rachman — Frontend Web Developer" />
-     <meta property="og:description" content="Website resmi dan portofolio Eki Zulfar Rachman, Front-End Web Developer." />
+        <meta property="og:title" content="Esa Kenzie Galaksi Putra  — Network Engineer & Video Editor" />
+     <meta property="og:description" content="Website resmi dan portofolio Esa Kenzie Galaksi Putra, Network Engineer & Video Editor." />
         <meta property="og:url" content="https://ekizr.com" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
