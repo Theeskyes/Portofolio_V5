@@ -24,7 +24,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Network Engineer &
+          Network Engineer
         </span>
       </span>
       <br />
@@ -140,12 +140,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Esa Kenzie Galaksi Putra — Network Engineer & Video Editor</title>
+        <title>Esa Kenzie Galaksi Putra — Network Engineer Video Editor</title>
         <meta name="description" content="Website portofolio Esa Kenzie Galaksi Putra, siswa XI TKJ 2." />
      <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ekizr.com" />
-        <meta property="og:title" content="Esa Kenzie Galaksi Putra  — Network Engineer & Video Editor" />
-     <meta property="og:description" content="Website resmi dan portofolio Esa Kenzie Galaksi Putra, Network Engineer & Video Editor." />
+        <meta property="og:title" content="Esa Kenzie Galaksi Putra  — Network Engineer Video Editor" />
+     <meta property="og:description" content="Website resmi dan portofolio Esa Kenzie Galaksi Putra, Network Engineer Video Editor." />
         <meta property="og:url" content="https://ekizr.com" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
@@ -153,7 +153,7 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Esa Kenzie Galaksi Putra",
-            "jobTitle": "Network Engineer & Video Editor",
+            "jobTitle": "Network Engineer Video Editor",
             "url": "https://ekizr.com",
             "sameAs": [
               "https://github.com/Theeskyes",
