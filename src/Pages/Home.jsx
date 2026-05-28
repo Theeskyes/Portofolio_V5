@@ -76,12 +76,12 @@ const SocialLink = memo(({ icon: Icon, link, label }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const WORDS = ["XI TKJ 2 Student", "Video Editor", "Network Enthusiast"];
+const TECH_STACK = ["Cisco", "CapCut", "Canva", "Adobe"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR", label: "GitHub Profile" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/", label: "LinkedIn Profile" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id", label: "Instagram Profile" }
+  { icon: Github, link: "https://github.com/Theeskyes", label: "GitHub Profile" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/esa-kenzie-galaksi-putra-1aa7993a9", label: "LinkedIn Profile" },
+  { icon: Instagram, link: "https://www.instagram.com/__woopie", label: "Instagram Profile" }
 ];
 
 const Home = () => {
