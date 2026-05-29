@@ -16,7 +16,7 @@ const PAGE_SIZE = 10;
 
 const Card = ({ children, className = "" }) => (
   <div className={`relative group ${className}`}>
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-500 pointer-events-none" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-500 pointer-events-none" />
     <div className="relative bg-white/5 backdrop-blur-xl border border-white/12 rounded-2xl h-full">
       {children}
     </div>
@@ -100,7 +100,7 @@ export default function Comments() {
       <div className="flex items-start sm:items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-50 pointer-events-none" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-xl blur opacity-50 pointer-events-none" />
             <div className="relative w-9 h-9 bg-[#030014] rounded-xl border border-white/15 flex items-center justify-center">
               <MessageSquare className="w-4 h-4 text-indigo-400" />
             </div>
@@ -218,7 +218,7 @@ export default function Comments() {
           {paginated.map((comment) => (
             <div key={comment.id} className="relative group">
               {comment.is_pinned && (
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-15 pointer-events-none" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-15 pointer-events-none" />
               )}
               <div
                 className={`relative bg-white/5 backdrop-blur-xl border rounded-2xl px-4 py-4 sm:px-5 transition-all duration-200 ${

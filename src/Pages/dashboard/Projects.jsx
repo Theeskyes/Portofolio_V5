@@ -14,7 +14,7 @@ import {
 
 const Card = ({ children, className = "" }) => (
   <div className={`relative group ${className}`}>
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
     <div className="relative bg-white/5 backdrop-blur-xl border border-white/12 rounded-2xl h-full">
       {children}
     </div>
@@ -46,7 +46,7 @@ const InputField = ({
 
 const SkeletonCard = () => (
   <div className="relative">
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10" />
     <div className="relative bg-white/5 border border-white/12 rounded-2xl p-4 flex flex-col gap-3">
       <div className="w-full aspect-[16/8] bg-white/5 animate-pulse rounded-xl" />
       <div className="h-4 bg-white/5 animate-pulse rounded-lg w-2/3" />
@@ -163,7 +163,7 @@ const Modal = ({ title, onClose, children }) => (
       className="relative z-10 w-full max-w-2xl flex flex-col"
       style={{ maxHeight: "calc(100vh - 24px)" }}
     >
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-20 pointer-events-none" />
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-20 pointer-events-none" />
       <div className="relative bg-[#0a0a1a] border border-white/12 rounded-2xl flex flex-col overflow-hidden">
         {/* Fixed header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/8 shrink-0">
@@ -420,7 +420,7 @@ export default function Projects() {
       <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-50" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-xl blur opacity-50" />
             <div className="relative w-9 h-9 bg-[#030014] rounded-xl border border-white/15 flex items-center justify-center">
               <FolderGit2 className="w-4 h-4 text-indigo-400" />
             </div>
