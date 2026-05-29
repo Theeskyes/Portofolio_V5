@@ -4,7 +4,7 @@ import { Award, Upload, Trash2, ImageIcon, Plus } from 'lucide-react'
 
 const Card = ({ children, className = '' }) => (
   <div className={`relative group ${className}`}>
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] rounded-2xl blur opacity-10 group-hover:opacity-25 transition duration-500" />
     <div className="relative bg-white/5 backdrop-blur-xl border border-white/12 rounded-2xl h-full">
       {children}
     </div>
@@ -13,7 +13,7 @@ const Card = ({ children, className = '' }) => (
 
 const SkeletonCard = () => (
   <div className="relative">
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10" />
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] rounded-2xl blur opacity-10" />
     <div className="relative bg-white/5 border border-white/12 rounded-2xl overflow-hidden">
       <div className="w-full aspect-[16/11.5] bg-white/5 animate-pulse" />
     </div>
@@ -25,7 +25,7 @@ const CertCard = ({ cert, onDelete }) => {
 
   return (
     <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-30 transition duration-500" />
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] rounded-2xl blur opacity-10 group-hover:opacity-30 transition duration-500" />
       <div className="relative bg-white/5 border border-white/12 rounded-2xl overflow-hidden">
         {/* Skeleton shown until image loads */}
         {!imgLoaded && (
@@ -97,7 +97,7 @@ export default function Certificates() {
       {/* Header */}
       <div className="flex items-center gap-3">
         <div className="relative">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-xl blur opacity-50" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] rounded-xl blur opacity-50" />
           <div className="relative w-9 h-9 bg-[#030014] rounded-xl border border-white/15 flex items-center justify-center">
             <Award className="w-4 h-4 text-indigo-400" />
           </div>

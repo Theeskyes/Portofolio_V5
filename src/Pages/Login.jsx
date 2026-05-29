@@ -32,7 +32,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-700" />
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-700" />
           <div className="relative bg-white/5 backdrop-blur-xl border border-white/15 rounded-2xl p-8 space-y-7">
 
             {/* Header */}

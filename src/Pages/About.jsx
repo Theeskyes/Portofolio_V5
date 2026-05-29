@@ -8,7 +8,7 @@ const Header = memo(() => (
   <div className="text-center lg:mb-8 mb-2 px-[5%]">
     <div className="inline-block relative group">
       <h2 
-        className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#a855f7]" 
+        className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#2563eb]" 
         data-aos="zoom-in-up"
         data-aos-duration="600"
       >
@@ -158,7 +158,7 @@ const AboutPage = () => {
   const statsData = useMemo(() => [
     {
       icon: Code,
-      color: "from-[#0ea5e9] to-[#a855f7]",
+      color: "from-[#0ea5e9] to-[#2563eb]",
       value: totalProjects,
       label: "Total Projects",
       description: "Innovative web solutions crafted",
@@ -166,7 +166,7 @@ const AboutPage = () => {
     },
     {
       icon: Award,
-      color: "from-[#a855f7] to-[#0ea5e9]",
+      color: "from-[#2563eb] to-[#0ea5e9]",
       value: totalCertificates,
       label: "Certificates",
       description: "Professional skills validated",
@@ -174,7 +174,7 @@ const AboutPage = () => {
     },
     {
       icon: Globe,
-      color: "from-[#0ea5e9] to-[#a855f7]",
+      color: "from-[#0ea5e9] to-[#2563eb]",
       value: YearExperience,
       label: "Years of Experience",
       description: "Continuous learning journey",
@@ -200,7 +200,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#a855f7]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#2563eb]">
                 Hello, I'm
               </span>
               <span 
@@ -223,13 +223,13 @@ const AboutPage = () => {
 
                {/* Quote Section */}
       <div 
-        className="relative bg-gradient-to-br from-[#0ea5e9]/5 via-transparent to-[#a855f7]/5 border border-gradient-to-r border-[#0ea5e9]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
+        className="relative bg-gradient-to-br from-[#0ea5e9]/5 via-transparent to-[#2563eb]/5 border border-gradient-to-r border-[#0ea5e9]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
         data-aos="fade-up"
         data-aos-duration="1700"
       >
         {/* Floating orbs background */}
-        <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#0ea5e9]/20 to-[#a855f7]/20 rounded-full blur-xl"></div>
-        <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#a855f7]/20 to-[#0ea5e9]/20 rounded-full blur-lg"></div>
+        <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#0ea5e9]/20 to-[#2563eb]/20 rounded-full blur-xl"></div>
+        <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#2563eb]/20 to-[#0ea5e9]/20 rounded-full blur-lg"></div>
         
         {/* Quote icon */}
         <div className="absolute top-3 left-4 text-[#0ea5e9] opacity-30">
@@ -248,7 +248,7 @@ const AboutPage = () => {
               <button 
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#0ea5e9] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl "
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#0ea5e9] to-[#2563eb] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl "
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
               </button>
@@ -257,7 +257,7 @@ const AboutPage = () => {
               <button 
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 "
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#2563eb]/50 text-[#2563eb] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#2563eb]/10 "
               >
                 <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
               </button>
