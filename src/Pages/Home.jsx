@@ -142,10 +142,10 @@ const Home = () => {
         <title>Esa Kenzie Galaksi Putra — Network Engineer Video Editor</title>
         <meta name="description" content="Website portofolio Esa Kenzie Galaksi Putra, siswa XI TKJ 2." />
      <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ekizr.com" />
+        <link rel="canonical" href="https://portofolio-kenzie3.vercel.app" />
         <meta property="og:title" content="Esa Kenzie Galaksi Putra  — Network Engineer Video Editor" />
      <meta property="og:description" content="Website resmi dan portofolio Esa Kenzie Galaksi Putra, Network Engineer Video Editor." />
-        <meta property="og:url" content="https://ekizr.com" />
+        <meta property="og:url" content="https://portofolio-kenzie3.vercel.app" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
           {
@@ -153,7 +153,7 @@ const Home = () => {
             "@type": "Person",
             "name": "Esa Kenzie Galaksi Putra",
             "jobTitle": "Network Engineer Video Editor",
-            "url": "https://ekizr.com",
+            "url": "https://portofolio-kenzie3.vercel.app",
             "sameAs": [
               "https://github.com/Theeskyes",
               "https://www.linkedin.com/in/esa-kenzie-galaksi-putra-1aa7993a9",

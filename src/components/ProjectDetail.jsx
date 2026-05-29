@@ -156,7 +156,7 @@ const ProjectDetails = () => {
     );
   }
 
-  const projectUrl = `https://ekizr.com/project/${toSlug(project.Title)}`;
+  const projectUrl = ` https://portofolio-kenzie3.vercel.app/project/${toSlug(project.Title)}`;
 
   return (
     <>
@@ -193,7 +193,7 @@ const ProjectDetails = () => {
             "author": {
               "@type": "Person",
               "name": "Eki Zulfar Rachman",
-              "url": "https://ekizr.com"
+              "url": " https://portofolio-kenzie3.vercel.app"
             }
           }
         `}</script>
