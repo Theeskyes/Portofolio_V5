@@ -187,7 +187,7 @@ const Home = () => {
                   <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                     data-aos="fade-up"
                     data-aos-delay="1000">
-                    Siswa XI TKJ 2 yang passionate dalam networking, editing video, dan desain grafis. Selalu berupaya memberikan hasil terbaik dalam setiap project.
+                    Siswa SMKN 1 Cikarang Utara yang passionate dalam networking, editing video, dan desain grafis. Selalu berupaya memberikan hasil terbaik dalam setiap project.
                   </p>
 
                   {/* Tech Stack */}

@@ -239,7 +239,7 @@ const AboutPage = () => {
         </div>
         
         <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-          "Leveraging AI as a professional tool, not a replacement."
+          "Skill bicara lebih keras dari kata-kata."
         </blockquote>
       </div>
 
