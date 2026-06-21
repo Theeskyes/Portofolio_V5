@@ -10,58 +10,73 @@ import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Code, Award, Boxes, X, Download, Eye } from "lucide-react";
+import { Code, Award, Boxes, X, Download, Eye, Video, Network, Brush, Camera } from "lucide-react";
 
-const projects = [
+const projectCategories = [
   {
-    id: 1,
-    Img: "https://img.youtube.com/vi/vgJq6qONv-4/hqdefault.jpg",
-    Title: "Sejarah Penculikan di Rengasdengklok",
-    Description: "Project sejarah tentang peristiwa penculikan di Rengasdengklok.",
-    Link: "https://youtu.be/vgJq6qONv-4?si=0N6hB5yP1FBlekd0",
-    Github: "Private",
-    TechStack: [],
-    Features: [],
+    key: "video",
+    label: "Video Production",
+    icon: Video,
+    items: [
+      {
+        id: 1,
+        Img: "https://img.youtube.com/vi/vgJq6qONv-4/hqdefault.jpg",
+        Title: "Sejarah Penculikan di Rengasdengklok",
+        Description: "Project sejarah tentang peristiwa penculikan di Rengasdengklok.",
+        Link: "https://youtu.be/vgJq6qONv-4?si=0N6hB5yP1FBlekd0",
+        Github: "Private",
+      },
+      {
+        id: 2,
+        Img: "https://img.youtube.com/vi/6hqtq05A9Ac/hqdefault.jpg",
+        Title: "Matematika Peluang Kombinasi",
+        Description: "Project matematika tentang peluang kombinasi.",
+        Link: "https://youtu.be/6hqtq05A9Ac?si=LO4uJ331D9NZvGRp",
+        Github: "Private",
+      },
+      {
+        id: 3,
+        Img: "https://img.youtube.com/vi/ZnRdT0wYIoI/hqdefault.jpg",
+        Title: "Hak dan Kewajiban Sebagai Warga Sekolah",
+        Description: "Project Pendidikan Pancasila tentang hak dan kewajiban sebagai warga sekolah.",
+        Link: "https://youtu.be/ZnRdT0wYIoI?si=Qupzbke3JfE1mMVl",
+        Github: "Private",
+      },
+      {
+        id: 4,
+        Img: "https://img.youtube.com/vi/f7uKq_xRda4/hqdefault.jpg",
+        Title: "Last Result Sejarah Nyanyi",
+        Description: "Project sejarah dengan format lagu.",
+        Link: "https://youtu.be/f7uKq_xRda4?si=QW5yfcotohyyFrDr",
+        Github: "Private",
+      },
+      {
+        id: 5,
+        Img: "https://img.youtube.com/vi/-lQmptVMiIQ/hqdefault.jpg",
+        Title: "Drama BK Tentang Bullying",
+        Description: "Tugas drama Bimbingan Konseling tentang isu bullying.",
+        Link: "https://youtu.be/-lQmptVMiIQ?si=6iKmlLNdfK_qCWiS",
+        Github: "Private",
+      },
+    ],
   },
   {
-    id: 2,
-    Img: "https://img.youtube.com/vi/6hqtq05A9Ac/hqdefault.jpg",
-    Title: "Matematika Peluang Kombinasi",
-    Description: "Project matematika tentang peluang kombinasi.",
-    Link: "https://youtu.be/6hqtq05A9Ac?si=LO4uJ331D9NZvGRp",
-    Github: "Private",
-    TechStack: [],
-    Features: [],
+    key: "network",
+    label: "Network Design",
+    icon: Network,
+    items: [],
   },
   {
-    id: 3,
-    Img: "https://img.youtube.com/vi/ZnRdT0wYIoI/hqdefault.jpg",
-    Title: "Hak dan Kewajiban Sebagai Warga Sekolah",
-    Description: "Project Pendidikan Pancasila tentang hak dan kewajiban sebagai warga sekolah.",
-    Link: "https://youtu.be/ZnRdT0wYIoI?si=Qupzbke3JfE1mMVl",
-    Github: "Private",
-    TechStack: [],
-    Features: [],
+    key: "art",
+    label: "Scribble Art",
+    icon: Brush,
+    items: [],
   },
   {
-    id: 4,
-    Img: "https://img.youtube.com/vi/f7uKq_xRda4/hqdefault.jpg",
-    Title: "Last Result Sejarah Nyanyi",
-    Description: "Project sejarah dengan format lagu.",
-    Link: "https://youtu.be/f7uKq_xRda4?si=QW5yfcotohyyFrDr",
-    Github: "Private",
-    TechStack: [],
-    Features: [],
-  },
-  {
-    id: 5,
-    Img: "https://img.youtube.com/vi/-lQmptVMiIQ/hqdefault.jpg",
-    Title: "Drama BK Tentang Bullying",
-    Description: "Tugas drama Bimbingan Konseling tentang isu bullying.",
-    Link: "https://youtu.be/-lQmptVMiIQ?si=6iKmlLNdfK_qCWiS",
-    Github: "Private",
-    TechStack: [],
-    Features: [],
+    key: "photo",
+    label: "Photography",
+    icon: Camera,
+    items: [],
   },
 ];
 
@@ -124,6 +139,26 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
   </button>
 );
+
+const CategoryButton = ({ category, isActive, onClick }) => {
+  const Icon = category.icon;
+  return (
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border ${
+        isActive
+          ? "bg-gradient-to-r from-blue-600/30 to-purple-600/30 border-purple-500/50 text-white shadow-lg shadow-purple-500/10"
+          : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:text-white hover:border-white/20"
+      }`}
+    >
+      <Icon className="w-4 h-4" />
+      {category.label}
+      <span className={`text-xs px-1.5 py-0.5 rounded-full ${isActive ? "bg-white/20" : "bg-white/10"}`}>
+        {category.items.length}
+      </span>
+    </button>
+  );
+};
 
 function TabPanel({ children, value, index }) {
   return (
@@ -277,17 +312,18 @@ const CertificateModal = ({ certificate, onClose }) => {
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(projectCategories[0].key);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
+  const allProjects = projectCategories.flatMap((cat) => cat.items);
+
   useEffect(() => {
     AOS.init({ once: false });
-    localStorage.setItem("projects", JSON.stringify(projects));
-    localStorage.setItem("certificates", JSON.stringify
-      (certificates));
+    localStorage.setItem("projects", JSON.stringify(allProjects));
   }, []);
 
   const handleChange = (event, newValue) => {
@@ -302,7 +338,9 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
+  const currentCategory = projectCategories.find((cat) => cat.key === activeCategory);
+  const currentProjects = currentCategory ? currentCategory.items : [];
+  const displayedProjects = showAllProjects ? currentProjects : currentProjects.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
@@ -371,18 +409,36 @@ export default function FullWidthTabs() {
         </AppBar>
 
         <TabPanel value={value} index={0}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {displayedProjects.map((project, index) => (
-                <div key={project.id}
-                  data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                  data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                  <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} id={project.id} />
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
+            {projectCategories.map((cat) => (
+              <CategoryButton
+                key={cat.key}
+                category={cat}
+                isActive={activeCategory === cat.key}
+                onClick={() => { setActiveCategory(cat.key); setShowAllProjects(false); }}
+              />
+            ))}
           </div>
-          {projects.length > initialItems && (
+
+          <div className="container mx-auto flex justify-center items-center overflow-hidden">
+            {displayedProjects.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {displayedProjects.map((project, index) => (
+                  <div key={project.id}
+                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                    <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} id={project.id} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="py-16 text-center w-full">
+                <p className="text-gray-400 text-lg">Coming Soon</p>
+                <p className="text-gray-500 text-sm mt-2">Project untuk kategori ini sedang disiapkan.</p>
+              </div>
+            )}
+          </div>
+          {currentProjects.length > initialItems && (
             <div className="mt-6 w-full flex justify-start">
               <ToggleButton onClick={() => toggleShowMore("projects")} isShowingMore={showAllProjects} />
             </div>
