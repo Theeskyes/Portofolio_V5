@@ -312,7 +312,7 @@ const CertificateModal = ({ certificate, onClose }) => {
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
-  const [activeCategory, setActiveCategory] = useState(projectCategories[0].key);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
@@ -409,41 +409,69 @@ export default function FullWidthTabs() {
         </AppBar>
 
         <TabPanel value={value} index={0}>
-          <div className="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
-            {projectCategories.map((cat) => (
-              <CategoryButton
-                key={cat.key}
-                category={cat}
-                isActive={activeCategory === cat.key}
-                onClick={() => { setActiveCategory(cat.key); setShowAllProjects(false); }}
-              />
+  {activeCategory === null ? (
+    // Tampilan pilihan kategori
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 py-4">
+      {projectCategories.map((cat, index) => {
+        const Icon = cat.icon;
+        return (
+          <button
+            key={cat.key}
+            onClick={() => setActiveCategory(cat.key)}
+            data-aos="fade-up"
+            data-aos-duration={800 + index * 100}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg p-8 text-left transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-50 group-hover:opacity-80 transition-opacity duration-300" />
+            <div className="relative z-10 flex items-center gap-5">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                <Icon className="w-8 h-8 text-purple-300" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-1">{cat.label}</h3>
+                <p className="text-gray-400 text-sm">{cat.items.length} project</p>
+              </div>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  ) : (
+    // Tampilan grid project di kategori terpilih
+    <div>
+      <button
+        onClick={() => { setActiveCategory(null); setShowAllProjects(false); }}
+        className="mb-6 flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300 text-sm font-medium"
+      >
+        ← Back to Categories
+      </button>
+
+      <div className="container mx-auto flex justify-center items-center overflow-hidden">
+        {displayedProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {displayedProjects.map((project, index) => (
+              <div key={project.id}
+                data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} id={project.id} />
+              </div>
             ))}
           </div>
-
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            {displayedProjects.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {displayedProjects.map((project, index) => (
-                  <div key={project.id}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                    <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} id={project.id} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="py-16 text-center w-full">
-                <p className="text-gray-400 text-lg">Coming Soon</p>
-                <p className="text-gray-500 text-sm mt-2">Project untuk kategori ini sedang disiapkan.</p>
-              </div>
-            )}
+        ) : (
+          <div className="py-16 text-center w-full">
+            <p className="text-gray-400 text-lg">Coming Soon</p>
+            <p className="text-gray-500 text-sm mt-2">Project untuk kategori ini sedang disiapkan.</p>
           </div>
-          {currentProjects.length > initialItems && (
-            <div className="mt-6 w-full flex justify-start">
-              <ToggleButton onClick={() => toggleShowMore("projects")} isShowingMore={showAllProjects} />
-            </div>
-          )}
-        </TabPanel>
+        )}
+      </div>
+      {currentProjects.length > initialItems && (
+        <div className="mt-6 w-full flex justify-start">
+          <ToggleButton onClick={() => toggleShowMore("projects")} isShowingMore={showAllProjects} />
+        </div>
+      )}
+    </div>
+  )}
+</TabPanel>
 
         <TabPanel value={value} index={1}>
           <div className="container mx-auto flex justify-center items-center overflow-hidden">
