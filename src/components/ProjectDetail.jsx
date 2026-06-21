@@ -14,6 +14,7 @@ import {
   Package,
   Cpu,
   Code,
+  Download,
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { toSlug } from "../utils/slug";
@@ -127,7 +128,6 @@ const ProjectDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-    // Cari project berdasarkan slug yang di-generate dari Title
     const selectedProject = storedProjects.find(
       (p) => toSlug(p.Title) === slug,
     );
@@ -137,7 +137,7 @@ const ProjectDetails = () => {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || "https://github.com/EkiZR",
+        Github: selectedProject.Github || "",
       };
       setProject(enhancedProject);
     }
@@ -156,25 +156,25 @@ const ProjectDetails = () => {
     );
   }
 
-  const projectUrl = ` https://portofolio-kenzie3.vercel.app/project/${toSlug(project.Title)}`;
+  const projectUrl = `https://portofolio-kenzie3.vercel.app/project/${toSlug(project.Title)}`;
 
   return (
     <>
       <Helmet>
-        <title>{project.Title} — Eki Zulfar Rachman</title>
+        <title>{project.Title} — Esa Kenzie Galaksi Putra</title>
         <meta
           name="description"
           content={
             project.Description
               ? project.Description.slice(0, 155)
-              : `Project ${project.Title} oleh Eki Zulfar Rachman — Frontend Web Developer.`
+              : `Project ${project.Title} oleh Esa Kenzie Galaksi Putra.`
           }
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={projectUrl} />
         <meta
           property="og:title"
-          content={`${project.Title} — Eki Zulfar Rachman`}
+          content={`${project.Title} — Esa Kenzie Galaksi Putra`}
         />
         <meta
           property="og:description"
@@ -183,20 +183,6 @@ const ProjectDetails = () => {
         <meta property="og:url" content={projectUrl} />
         <meta property="og:type" content="website" />
         {project.Img && <meta property="og:image" content={project.Img} />}
-        <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            "name": "${project.Title}",
-            "description": "${project.Description?.replace(/"/g, '\\"')}",
-            "url": "${projectUrl}",
-            "author": {
-              "@type": "Person",
-              "name": "Eki Zulfar Rachman",
-              "url": " https://portofolio-kenzie3.vercel.app"
-            }
-          }
-        `}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[#030014] px-[2%] sm:px-0 relative overflow-hidden">
@@ -247,30 +233,51 @@ const ProjectDetails = () => {
                 <ProjectStats project={project} />
 
                 <div className="flex flex-wrap gap-3 md:gap-4">
-                  <a
-                    href={project.Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
-                  >
-                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-purple-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                    <span className="relative font-medium">Live Demo</span>
-                  </a>
+                  {project.Link && (
+                    
+                    <a
+                      href={project.Link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                    >
+                      <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-purple-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                      <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                      <span className="relative font-medium">Live Demo</span>
+                    </a>
+                  )}
 
-                  <a
-                    href={project.Github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
-                    onClick={(e) =>
-                      !handleGithubClick(project.Github) && e.preventDefault()
-                    }
-                  >
-                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
-                    <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                    <span className="relative font-medium">Github</span>
-                  </a>
+                  {project.FileUrl && (
+                    
+                    <a
+                      href={project.FileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                      className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-green-600/10 to-emerald-600/10 hover:from-green-600/20 hover:to-emerald-600/20 text-green-300 rounded-xl transition-all duration-300 border border-green-500/20 hover:border-green-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                    >
+                      <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-green-600/10 to-emerald-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                      <Download className="relative w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 transition-transform" />
+                      <span className="relative font-medium">Download File</span>
+                    </a>
+                  )}
+
+                  {project.Github && (
+                    
+                    <a
+                      href={project.Github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                      onClick={(e) =>
+                        !handleGithubClick(project.Github) && e.preventDefault()
+                      }
+                    >
+                      <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                      <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
+                      <span className="relative font-medium">Github</span>
+                    </a>
+                  )}
                 </div>
 
                 <div className="space-y-4 md:space-y-6">
