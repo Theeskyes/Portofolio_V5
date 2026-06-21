@@ -267,6 +267,38 @@ const certificates = [
     subtitle: "Guest Lecture 2026: IoT & Digital Transformation - President University, 16 April 2026",
     pages: [
       "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/Document%20from%20Esa%20Kenzie%20Galaksi%20Putra-1.png",
+    {
+    id: 4,
+    title: "Juara Umum",
+    subtitle: "Lomba Kompetensi dan Kreativitas Pramuka Penggalang Ke-12 (LKKP-XII) Se-Kabupaten Bekasi, 19 November 2022",
+    pages: [
+      "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/juara%20umum_1.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "Juara 1 Lomba Kreto",
+    subtitle: "Lomba Kompetensi dan Kreativitas Pramuka Penggalang Ke-12 (LKKP-XII) Se-Kabupaten Bekasi, 19 November 2022",
+    pages: [
+      "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/lomba%20kreto%20_1.jpg",
+    ],
+  },
+  {
+    id: 6,
+    title: "Juara Harapan 1 Maket Pionering",
+    subtitle: "Gebyar XI Lomba Pramuka Tingkat SD/MI, SMP/MTs, SMA Se-Pulau Jawa Plus, Gudep Kota Bekasi, 4 November 2023",
+    pages: [
+      "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/serti%20maket_1.jpg",
+    ],
+  },
+  {
+    id: 7,
+    title: "Harapan 1 LKBBT",
+    subtitle: "Pusara Competition III Perlombaan Unjuk Kreasi Pramuka, Se-Kabupaten Bekasi, Oktober 2023",
+    pages: [
+      "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/serti%20pusaka%20lkkbt_1.jpg",
+    ],
+  },
     ],
   },
 ];
