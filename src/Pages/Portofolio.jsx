@@ -488,6 +488,13 @@ export default function FullWidthTabs() {
   useEffect(() => {
     AOS.init({ once: false });
     localStorage.setItem("projects", JSON.stringify(allProjects));
+
+    if (window.location.hash === "#Portofolio") {
+      setTimeout(() => {
+        const el = document.getElementById("Portofolio");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
   }, []);
 
   const handleChange = (event, newValue) => {
