@@ -301,7 +301,7 @@ const certificates = [
       "https://tuwtizpvlztsrvspzjrp.supabase.co/storage/v1/object/public/certificate-images/serti%20pusaka%20lkkbt_1.jpg",
     ],
   },
-    ],
+  ];  
 
 const techStacks = [
   { icon: "html.svg", language: "HTML" },
