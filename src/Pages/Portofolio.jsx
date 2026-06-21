@@ -474,7 +474,9 @@ const CertificateModal = ({ certificate, onClose }) => {
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(() => {
+    return localStorage.getItem("activeCategory") || null;
+  });
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
@@ -579,7 +581,10 @@ export default function FullWidthTabs() {
         return (
           <button
             key={cat.key}
-            onClick={() => setActiveCategory(cat.key)}
+            onClick={() => {
+              setActiveCategory(cat.key);
+              localStorage.setItem("activeCategory", cat.key);
+            }}
             data-aos="fade-up"
             data-aos-duration={800 + index * 100}
             className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg p-8 text-left transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1"
@@ -602,7 +607,11 @@ export default function FullWidthTabs() {
     // Tampilan grid project di kategori terpilih
     <div>
       <button
-        onClick={() => { setActiveCategory(null); setShowAllProjects(false); }}
+        onClick={() => {
+          setActiveCategory(null);
+          setShowAllProjects(false);
+          localStorage.removeItem("activeCategory");
+        }}
         className="mb-6 flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300 text-sm font-medium"
       >
         ← Back to Categories
